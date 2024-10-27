@@ -33,14 +33,14 @@
       </v-row>
 
       <!-- 简介 -->
-      <!-- <v-card class="mb-8" elevation="2">
+      <v-card class="mb-8" elevation="2">
         <v-card-title class="text-h5 font-weight-bold" style="background-color: #EF8080; color: white;">
           个人简介
         </v-card-title>
         <v-card-text class="text-body-1 pa-4">
-          拥有7年前端开发经验的高级工程师，专注于创建高性能、可扩展的 Web 应用。精通现代前端技术栈，具有强烈的用户体验意识和团队协作能力。持续关注前端领域的最新趋势和最佳实践，并积极将其应用于实际项目中。
+          7年前端开发经验，热衷于创建高性能、可扩展的 Web 应用。熟练使用现代前端技术栈，具有强烈的用户体验意识和团队协作能力，喜欢读书和爬山。
         </v-card-text>
-      </v-card> -->
+      </v-card>
 
       <!-- 技能 -->
       <v-card class="mb-8" elevation="2">
@@ -95,6 +95,36 @@
         </v-card-text>
       </v-card>
 
+      <!-- 个人项目 -->
+      <v-card class="mb-8" elevation="2">
+        <v-card-title class="text-h5 font-weight-bold" style="background-color: #EF8080; color: white;">
+          个人项目
+        </v-card-title>
+        <v-card-text class="pa-4">
+          <v-row>
+            <v-col v-for="project in personalProjects" :key="project.id" cols="12" md="6">
+              <v-card outlined>
+                <v-card-title class="text-h6">{{ project.name }}</v-card-title>
+                <v-card-text>
+                  <p>{{ project.description }}</p>
+                  <v-chip-group>
+                    <v-chip v-for="tech in project.technologies" :key="tech" small outlined color="#EF8080">
+                      {{ tech }}
+                    </v-chip>
+                  </v-chip-group>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn text color="#EF8080" :href="project.link" target="_blank">
+                    查看项目
+                    <v-icon right>mdi-open-in-new</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+
       <!-- 教育背景 -->
       <v-card elevation="2">
         <v-card-title class="text-h5 font-weight-bold" style="background-color: #EF8080; color: white;">
@@ -132,18 +162,18 @@ const skills = ref([
     ]
   },
   {
-    category: '工具和框架',
-    items: [
-      { name: 'Git', level: 3 },
-      { name: 'Webpack', level: 2 },
-    ]
-  },
-  {
     category: '后端和数据库',
     items: [
       { name: 'Node.js', level: 3 },
       { name: 'Express.js', level: 3 },
       { name: 'MongoDB', level: 3 },
+    ]
+  },
+  {
+    category: '工具和框架',
+    items: [
+      { name: 'Git', level: 3 },
+      { name: 'Webpack', level: 2 },
     ]
   },
 ])
@@ -155,11 +185,11 @@ const workExperience = ref([
     company: '北京阳光汇点数码科技有限公司',
     date: '2022年11月 - 2024年8月',
     responsibilities: [
-      '负责前端项目与甲方的对接工作，期间与甲方公司对接需求评估排期并按期交付，设计复杂需求开发方案，同时就开发流程和项目中的难点形成文档，降低其他前端开发熟悉项目的时间成本，保证前端需求开发的正常推进。',
-      '负责公司核心产品的前端架构设计和开发，使用 Vue.js 和 TypeScript',
-      '优化前端性能，将页面加载时间减少 40%，显著提升用户体验',
-      '引入并推广组件化开发方法，提高了团队开发效率和代码复用率',
-      '指导和培训初级开发人员，组织技术分享会，提升团队整体技术水平',
+      '对复杂需求设计开发方案',
+      '梳理开发流程和项目难点',
+      '带前端新人帮助推进需求正常开发',
+      '与甲方人员进行需求对接并排期',
+      '需求开发并按期交付',
     ],
   },
   {
@@ -168,10 +198,10 @@ const workExperience = ref([
     company: '顺为互联科技有限公司（外派北京创新奇智科技有限公司）',
     date: '2021年4月 - 2022年11月',
     responsibilities: [
-      '使用 React 和 Redux 开发和维护多个大型 Web 应用',
-      '与后端团队密切合作，设计和实现 RESTful API',
-      '实现响应式设计，确保应用在各种设备上的良好表现',
-      '参与代码审查，持续改进开发流程和代码质量',
+      '负责 cloud  云平台-数据标注系统的研发',
+      '与标注组负责人和后端讨论确认标注系统需求',
+      '与产品、UI  确认相关信息并开发',
+      '协助其它系统完成标注系统相关功能嵌入',
     ],
   },
   {
@@ -180,9 +210,10 @@ const workExperience = ref([
     company: '通铭教育科技股份有限公司',
     date: '2019年3月 - 2021年4月',
     responsibilities: [
-      '使用 HTML5、CSS3 和 JavaScript 开发公司网站和内部工具',
-      '协助优化网站 SEO，提高搜索引擎排名',
-      '参与用户界面设计讨论，提供前端技术可行性建议',
+      '在客户现场驻场提供定制化开发',
+      '负责产品前端项目的维护和开发，期间完成了多个重要功能开发，比如授课页面增加在线聊天功能等',
+      '优化了前端的用户体验',
+      '参与开发完成新的定制化产品',
     ],
   },
   {
@@ -191,10 +222,26 @@ const workExperience = ref([
     company: '北京四和创想科技有限公司',
     date: '2017年11月 - 2019年3月',
     responsibilities: [
-      '使用 HTML5、CSS3 和 JavaScript 开发公司网站和内部工具',
-      '协助优化网站 SEO，提高搜索引擎排名',
-      '参与用户界面设计讨论，提供前端技术可行性建议',
+      '根据产品经理提出的需求进行技术可行性评估并协商技术解决方案',
+      '进行项目性能优化比如页面按需加载',
     ],
+  },
+])
+
+const personalProjects = ref([
+  {
+    id: 1,
+    name: '视频工具',
+    description: '基于 Nx、Angular、Nodejs、WebRtc 的在线视频工具平台，支持在线视频录制和下载，支持多人在线会议室。',
+    technologies: ['Vue.js', 'Node.js', 'Express', 'Websocket', 'WebRTC'],
+    link: 'https://github.com/chaikd/webrtc-learn',
+  },
+  {
+    id: 2,
+    name: '个人博客',
+    description: '使用 Vue3 和 Nodejs、Express、Mongoos 开发的个人博客平台，支持文章和图集管理。',
+    technologies: ['Vue3', 'Nodejs', 'Express', 'Mongoose'],
+    link: 'https://github.com/chaikd/blog-v2',
   },
 ])
 

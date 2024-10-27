@@ -1,19 +1,18 @@
 <template>
-  <v-main>
-    <v-parallax
-      class="bg-main"
-      src="https://picsum.photos/1920/1080?random"
-      :height="500"
-    >
-      <div class="d-flex flex-column fill-height justify-center align-center text-white">
-        <h1 class="text-h2 font-weight-thin mb-4">不负今日</h1>
-        <h4 class="subheading">终日之思不如须臾之所学也</h4>
-      </div>
-    </v-parallax>
-
+  <v-parallax
+    class="parallax bg-main"
+    src="https://picsum.photos/1920/1080?random"
+    :height="600"
+  >
+    <div class="d-flex flex-column fill-height justify-center align-center text-white">
+      <h1 class="text-h2 font-weight-thin mb-4">不负今日</h1>
+      <h4 class="subheading">终日之思不如须臾之所学也</h4>
+    </div>
+  </v-parallax>
+  <v-main class="tw-pb-10">
     <v-container>
       <div class="tw-flex tw-justify-between tw-items-center my-5 color-main">
-        <h2 class="text-h4 font-weight-bold">最新文章</h2>
+        <span class="text-h4 font-weight-bold">最新文章</span>
         <routerLink to="/article">
           <span>查看更多</span>
         </routerLink>
@@ -54,9 +53,9 @@
     </v-container>
     <!-- 最新图片模块 -->
     <v-container>
-      <v-responsive class="mx-auto mt-16" max-width="1200">
+      <v-responsive class="mx-auto mt-16 tw-pb-10" max-width="1200">
         <div class="tw-flex tw-justify-between tw-items-center my-5 color-main">
-          <h2 class="text-h4 font-weight-bold mb-8 px-4" style="color: #EF8080;">图片</h2>
+          <span class="text-h4 font-weight-bold mb-8 px-4">图片</span>
           <routerLink to="/album">
             <span>查看更多</span>
           </routerLink>

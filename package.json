@@ -7,6 +7,8 @@
   "scripts": {
     "dev:console": "vite packages/console",
     "dev:web": "vite packages/web",
+    "build:console": "vite build packages/console",
+    "build:web": "vite build packages/web",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
