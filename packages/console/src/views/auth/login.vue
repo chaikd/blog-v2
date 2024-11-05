@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <v-sheet class="login-box mx-auto">
+  <v-sheet class="login-box tw-absolute mx-auto">
     <v-form ref="form" fast-fail @submit.prevent="submit">
       <template v-for="item in formConfig" :key="item.prop">
         <v-text-field
@@ -61,7 +61,6 @@ async function submit() {
 </script>
 <style scoped lang="scss">
 .login-box{
-  // position: absolute;
   width: 30%;
   top: 50%;
   left: 50%;

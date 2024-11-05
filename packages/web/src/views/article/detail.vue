@@ -6,19 +6,19 @@
       
       <!-- 文章元数据 -->
       <v-row class="mb-6">
-        <v-col cols="12" sm="3">
+        <v-col cols="12" sm="4">
           <v-icon color="#EF8080" class="mr-2">mdi-account</v-icon>
           <span class="text-subtitle-1">{{ article.author }}</span>
         </v-col>
-        <v-col cols="12" sm="3">
+        <v-col cols="12" sm="4">
           <v-icon color="#EF8080" class="mr-2">mdi-calendar</v-icon>
           <span class="text-subtitle-1">{{ article.date }}</span>
         </v-col>
-        <v-col cols="12" sm="3">
+        <!-- <v-col cols="12" sm="3">
           <v-icon color="#EF8080" class="mr-2">mdi-clock-outline</v-icon>
           <span class="text-subtitle-1">{{ article.readTime }} min read</span>
-        </v-col>
-        <v-col cols="12" sm="3">
+        </v-col> -->
+        <v-col cols="12" sm="4">
           <span
             v-for="tag in article.tags"
             :key="tag"
@@ -91,7 +91,7 @@ const getDetail = () => {
       ...res,
       author: 'chaikd',
       date: new Date(createTime).toLocaleString(),
-      readTime: Math.floor((res.content.length / 350 > 1 ? Math.round(res.content.length / 400) : 1) / 60),
+      readTime: Math.floor((codeHtml.length / 350 > 1 ? Math.round(codeHtml.length / 400) : 1)),
       tags: [tag],
       content: codeHtml,
       image: cover || `https://picsum.photos/800/300?random=0`

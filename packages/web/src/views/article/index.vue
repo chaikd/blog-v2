@@ -40,7 +40,7 @@
           <v-card
             height="300"
             :elevation="2"
-            @click="toDetail(post.id)"
+            @click="toDetail(post._id)"
           >
             <v-img :src="post.image" height="150" cover></v-img>
             <v-card-title>{{ post.title }}</v-card-title>
