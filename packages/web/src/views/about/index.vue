@@ -233,15 +233,15 @@ const personalProjects = ref([
     id: 1,
     name: '视频工具',
     description: '基于 Nx、Angular、Nodejs、WebRtc 的在线视频工具平台，支持在线视频录制和下载，支持多人在线会议室。',
-    technologies: ['Vue.js', 'Node.js', 'Express', 'Websocket', 'WebRTC'],
+    technologies: ['Angular', 'Node.js', 'Express', 'Websocket', 'WebRTC'],
     link: 'https://github.com/chaikd/webrtc-learn',
   },
   {
     id: 2,
-    name: '个人博客',
-    description: '使用 Vue3 和 Nodejs、Express、Mongoos 开发的个人博客平台，支持文章和图集管理。',
-    technologies: ['Vue3', 'Nodejs', 'Express', 'Mongoose'],
-    link: 'https://github.com/chaikd/blog-v2',
+    name: '画框工具',
+    description: '基于 Vite、Vue3、Typescript、Fabricjs 的画框工具组件。',
+    technologies: ['Vue.js', 'Typescript', 'vite'],
+    link: 'https://github.com/chaikd/vue3-label',
   },
 ])
 
